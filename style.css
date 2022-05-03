@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 3rem 0 0 0;
+    font-size: .900rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* REUSABLE CSS CLASSES */
+.section {
+    padding: 6rem 0 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: rgb(114, 113, 113);
+}
+
+/* LAYOUT */
+.container {
+    max-width: 968px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    z-index: 999;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .3s;
+}
+
+.change-header {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 4px rgb(125, 125, 125);
+}
+
+.nav {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo,
+.nav-open {
+    color: rgb(153, 153, 153);
+    font-weight: 500;
+    transition: .3s;
+}
+
+.logo:hover,
+.nav-open:hover {
+    color: #000;
+}
+
+.nav-open {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.nav-item {
+    margin-bottom: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.3rem;
+    color: rgb(153, 153, 153);
+    font-weight: 300;
+    transition: .3s;
+}
+
+.nav-link:hover {
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+
+.nav-close {
+    font-size: 1.7rem;
+    color: #fff;
+    position: absolute;
+    top: .7rem;
+    right: 1.115rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .main-nav {
+        background-color: rgb(32, 32, 32);
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 3.5rem 0 1.5rem;
+        text-align: center;
+        z-index: 9999;
+        transition: .4s;
+    }
+}
+
+.show-menu {
+    top: 0;
+}
+
+.active-link {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+}
+
+.active-link::before {
+    content: '';
+    background-color: #ffd325;
+    width: 20px;
+    height: 2px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.home-data {
+    display: grid;
+}
+
+.home-text {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: rgb(114, 113, 113);
+}
+
+.title-text {
+    color: rgb(114, 113, 113);
+}
+
+.subtitle-text {
+    margin-top: 1rem;
+    padding: 4px;
+    background-color: #ffd325;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.glimmer {
+    position: absolute;
+    overflow: hidden;
+    background-color: rgb(114, 113, 113);
+    bottom: -5px;
+    left: 3px;
+    width: calc(100% / 1.7);
+    height: 5px;
+    border-radius: 2.5px;
+}
+
+@keyframes move {
+    100% { transform: translateX(200%); }
+}
+
+.glimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #fff023 0% 20%,
+        #ffd325 50%,
+        #fff023 80% 100%
+    );
+    animation: move 2s infinite;
+}
+
+.home, .nutrition, .breeds, .contact {
+    height: 100vh;
+}
+
+@media screen and (min-width: 767px) {
+    .section {
+        padding-top: 10rem;
+    }
+
+    .nav-list {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin-left: 2.7rem;
+        margin-bottom: 0;
+    }
+
+    .nav-link, .logo {
+        font-size: 1rem;
+        color: rgb(153, 153, 153);
+    }
+
+    .nav-link:hover {
+        color: #ffd325;
+    }
+
+    .active-link {
+        color: #ffd325;
+    }
+
+    .nav-open, .nav-close {
+        display: none;
+    }
+
+    .home-text {
+        text-align: center;
+        font-size: 2.7rem;
+    }
+
+    .glimmer {
+        left: 20.3rem;
+        width: calc(100% / 3);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        margin: 0 auto;
+    }
+}
